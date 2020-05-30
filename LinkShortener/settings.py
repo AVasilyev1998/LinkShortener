@@ -13,7 +13,7 @@ SECRET_KEY = '$l$07%zf0wt0py^*)$rx)&r^45yo*xf+zcnu=%(jt(w!)tx+82'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 # DEBUG = False
 
 

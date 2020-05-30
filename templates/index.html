@@ -63,7 +63,7 @@
                        }
                        let shortened = response['shortened_link'];
                        {#console.log(res);#}
-                       $("#link_text").text("http://localhost:8888/shortener/" + shortened);
+                       $("#link_text").text("https://gentle-spire-46215.herokuapp.com/shortener/" + shortened);
                        $("#link_text").attr("href", '/shortener/'+shortened);
                        $("#link").css("visibility", "visible");
                    }

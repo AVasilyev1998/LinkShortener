@@ -1,23 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container-fluid col-10 offset-1 p-2 border rounded text-center">
+    <div class="container col-lg-10 col-lg-offset-1 offset-1 mt-1 p-2 text-center">
         <h1>Link shortener</h1>
-        <form class="form-group" id='link_form' method="POST" novalidate>
+        <form class="form-group p-1" id='link_form' method="POST" novalidate>
             <label for="link_input">Link</label>
             <input id='link_input' name='link_input' maxlength="300" minlength="10" class="form-control" type="text">
-            <button id="get_link" class="mt-1 btn btn-primary">Add</button>
+            <br>
+            <button id="get_link" class="btn btn-primary ">Add</button>
             {% csrf_token %}
         </form>
     </div>
-    <div id="link" class="container-fluid col-10 offset-1 border rounded text-center mt-2">
+    <div id="link" class="container col-lg-10 col-lg-offset-1 text-center mt-2">
         Your link:  <a href="" id="link_text"></a>
+         <span id="copy_link" class="glyphicon glyphicon-copy"
+               data-target="link_text" aria-hidden="false" style="font-size:19px;" onclick="copyURI(this)">Copy</span>
+
     </div>
 
 {% endblock %}
 
 {% block script %}
     <script lang="javascript">
+        function copyURI(evt) {
+                {#evt.preventDefault();#}
+                navigator.clipboard.writeText($("#link_text").text()).then(() => {
+                  /* clipboard successfully set */
+                }, () => {
+                  /* clipboard write failed */
+                });
+        };
+
         $(document).ready(function() {
 
             function getCookie(name) {
@@ -69,6 +82,7 @@
                    }
                  });
             })
+
 
         });
     </script>

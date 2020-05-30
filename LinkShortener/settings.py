@@ -111,4 +111,4 @@ CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
 # Activate Django-Heroku.
-django_heroku.settings(locals(), logging=True)
+django_heroku.settings(locals(), logging=False)

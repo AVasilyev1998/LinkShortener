@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import Url
+import logging
 
 
 def index(request):
@@ -8,6 +9,8 @@ def index(request):
         return render(request, 'index.html', {})
 
     if request.method == 'POST' and request.is_ajax():
+        logging.INFO(f'got request with {request.POST}')
+
         link = request.POST['link_input']
         if len(link) > 0:
             obj, created = Url.create(url=link)

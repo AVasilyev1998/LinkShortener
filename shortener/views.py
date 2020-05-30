@@ -3,13 +3,14 @@ from django.http import JsonResponse
 from .models import Url
 import logging
 
+logger = logging.getLogger(__name__)
 
 def index(request):
     if request.method == 'GET':
         return render(request, 'index.html', {})
 
     if request.method == 'POST' and request.is_ajax():
-        logging.INFO(f'got request with {request.POST}')
+        logger.info(f'got request with {request.POST}')
 
         link = request.POST['link_input']
         if len(link) > 0:

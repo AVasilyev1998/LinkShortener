@@ -5,5 +5,5 @@ app_name = 'shortener'
 
 urlpatterns = [
     path('', index, name='index'),
-    re_path(r'(?P<short_url>\w{0,120})/$', link_redirector, name='redirector'),
+    re_path(r'(?P<short_url>\w{0,230})/$', link_redirector, name='redirector'),
 ]

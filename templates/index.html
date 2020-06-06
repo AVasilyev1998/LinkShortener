@@ -70,14 +70,16 @@
                    url: $('form').action,
                    data: $('form').serialize(), // serializes the form's elements.
                    success: function(response) {
-                       {#console.log(response); // show response from the script.#}
-                       if (typeof response['error'] === "undefined") {
-                           let price = response['price'];
+                       if (response.hasOwnProperty('error')){
+                           $("#link_text").text(response['error']);
+                           $("#link_text").attr("href", '');
                        }
-                       let shortened = response['shortened_link'];
-                       {#console.log(res);#}
-                       $("#link_text").text("https://gentle-spire-46215.herokuapp.com/shortener/" + shortened);
-                       $("#link_text").attr("href", '/shortener/'+shortened);
+                       else{
+                           let shortened = response['shortened_link'];
+                           $("#link_text").text("https://gentle-spire-46215.herokuapp.com/shortener/" + shortened);
+                           $("#link_text").attr("href", '/shortener/'+shortened);
+                       }
+
                        $("#link").css("visibility", "visible");
                    }
                  });

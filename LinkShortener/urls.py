@@ -4,12 +4,12 @@ from django.shortcuts import redirect
 
 
 def main_redirect(request):
-    return redirect('shortener:index')
+    return redirect('sh:index')
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shortener/', include('shortener.urls'), name='shortener'),
+    path('sh/', include('shortener.urls'), name='sh'),
     path('', main_redirect),
 ]
 

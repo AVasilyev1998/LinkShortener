@@ -9,7 +9,7 @@ def main_redirect(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sh/', include('shortener.urls'), name='sh'),
+    path('sh/', include('sh.urls'), name='sh'),
     path('', main_redirect),
 ]
 

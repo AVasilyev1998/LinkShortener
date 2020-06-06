@@ -1,7 +1,7 @@
 from django.urls import path, re_path
 from .views import index, link_redirector
 
-app_name = 'shortener'
+app_name = 'sh'
 
 urlpatterns = [
     path('', index, name='index'),

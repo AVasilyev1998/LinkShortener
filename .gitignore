@@ -1,6 +1,8 @@
 /env
 db.sqlite3
-/__pycache__
+__pycache__/
 /.idea
 /collected_static
-/LinkShortener/__pycache__
+/LinkShortener/__pycache__/
+/sh/__pycache__/
+/sh/migrations/__pycache__/

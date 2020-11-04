@@ -7,14 +7,15 @@
             <label for="link_input">Link</label>
             <input id='link_input' name='link_input' maxlength="300" minlength="10" class="form-control" type="text">
             <br>
-            <button id="get_link" class="btn btn-primary ">Add</button>
+            <button id="get_link" class="btn btn-primary">Add</button>
             {% csrf_token %}
         </form>
     </div>
     <div id="link" class="container col-lg-10 col-lg-offset-1 text-center mt-2">
         Your link:  <a href="" id="link_text"></a>
-         <span id="copy_link" class="glyphicon glyphicon-copy"
-               data-target="link_text" aria-hidden="false" style="font-size:19px;" onclick="copyURI(this)">Copy</span>
+{#         <span id="copy_link" class="glyphicon glyphicon-copy "#}
+{#               data-target="link_text" aria-hidden="false" style="font-size:19px;" onclick="copyURI(this)">Copy</span>#}
+            <div id="copy_link" class="btn btn-primary" onclick="copyURI(this)">Copy</div>
 
     </div>
 

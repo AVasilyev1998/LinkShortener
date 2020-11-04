@@ -12,6 +12,11 @@ logger = logging.getLogger(__name__)
 
 
 def index(request):
+    """
+    Main method which uses index.html template
+    :param request:
+    :return:
+    """
     if request.method == 'GET':
         return render(request, 'index.html', {})
 
@@ -53,6 +58,12 @@ def index(request):
 
 
 def link_redirector(request, short_url):
+    """
+    Redirecting method which redirects users with short_urls
+    :param request:
+    :param short_url:
+    :return:
+    """
     if Url.objects.filter(short_url=short_url).exists():
         return redirect(f'{Url.objects.get(short_url=short_url).url}')
     return JsonResponse({'get_url': short_url})

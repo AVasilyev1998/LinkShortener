@@ -3,6 +3,11 @@ import hashlib
 
 
 class Url(models.Model):
+    """
+        url - url that user inserts into shortener
+        short_url - hashed url that shortener use to make redirection
+        created - datetime when it was created
+    """
     url = models.URLField(unique=True)
     short_url = models.URLField(db_index=True)
     created = models.DateTimeField(auto_now=True)
